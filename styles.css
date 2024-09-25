@@ -18,9 +18,9 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(255, 255 , 255, 0.05);
+    background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
 }
 
 .logo-placeholder {
@@ -32,11 +32,17 @@ body {
     border-radius: 5px;
 }
 
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
 h1 {
     font-size: 48px;
     margin-bottom: 10px;
     color: #0affd1;
-    text-shadow: 0 0 10px #0affd1, 0 0 20px #0affd1;
+    text-shadow: 0 0 3px #0affd1, 0 0 20px #0affd1;
 }
 
 p {
