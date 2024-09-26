@@ -33,20 +33,20 @@ body {
 }
 
 .logo {
-    width: 200px;
-    margin-bottom: 20px;
+    width: 600px;
     border-radius: 5px;
 }
 
 h1 {
     font-size: 48px;
-    margin-bottom: 10px;
+    margin-top: -100px;
     color: #0affd1;
     text-shadow: 0 0 3px #0affd1, 0 0 20px #0affd1;
 }
 
 p {
     font-size: 24px;
+    margin-top: 30px;
     color: #bbb;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2)
 }
