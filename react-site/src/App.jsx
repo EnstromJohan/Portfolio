@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Landing from './components/Landing';
+import Skills from './components/Skills';
 import About from './components/About';
 import './index.css';
 
@@ -14,7 +15,8 @@ const App = () => {
 
         <Header />
         <Landing />
-        <About />
+        <Skills />
+        {/* <About /> */}
       </div>
   );
 };

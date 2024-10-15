@@ -1,23 +1,49 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import headerLogo from '../assets/logo.png';
 
 const Header = () => {
-    return (
-        <header className="w-full absolute top-0 left-0 p-6 z-20 flex items-center justify-between">
-            {/* Portfolio Title */}
-            <div className="text-2xl font-bold text-white ml-[10vw] px-40">
-                Portfolio
-            </div>
+  return (
+    <header className="w-full fixed top-0 left-0 flex justify-between items-center px-40 py-4 bg-transparent z-20">
 
-            {/* Navigation Links */}
-            <nav className="mr-[10vw] font-bold text-white px-40">
-                <ul className="flex space-x-8">
-                    <li><a href="#about" className="hover:text-red-600">About</a></li>
-                    <li><a href="#projects" className="hover:text-red-600">Projects</a></li>
-                    <li><a href="#contact" className="hover:text-red-600">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    );
+      <div className="w-24">
+        <a href="#home">
+            <img 
+            src={headerLogo}
+            alt="Logo"
+            className="w-full h-auto"
+            />
+        </a>
+      </div>
+      
+      <nav className="hidden md:flex space-x-8">
+        <ul className="flex space-x-8">
+          <li>
+            <a href="#about" className="text-xl font-bold text-white hover:text-red-400">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="text-xl font-bold text-white hover:text-red-400">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="text-xl font-bold text-white hover:text-red-400">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div className="md:hidden">
+        <button className="text-white">
+          <FontAwesomeIcon icon={faBars} className="w-8 h-8" />
+        </button>
+      </div>
+    </header>
+  );
 };
 
 export default Header;
