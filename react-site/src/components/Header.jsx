@@ -5,7 +5,7 @@ import headerLogo from '../assets/logo.png';
 
 const Header = () => {
   return (
-    <header className="w-full fixed top-0 left-0 flex justify-between items-center px-40 py-4 bg-transparent z-20">
+    <header className="w-full fixed top-0 left-0 flex justify-between items-center px-60 py-4 bg-transparent z-20">
 
       <div className="w-24">
         <a href="#home">
