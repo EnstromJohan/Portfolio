@@ -1,49 +1,26 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import headerLogo from '../assets/logo.png';
 
-const Header = () => {
-  return (
-    <header className="w-full fixed top-0 left-0 flex justify-between items-center px-60 py-4 bg-transparent z-20">
+const Header = ({ toggleDarkMode, darkMode }) => {
+    return (
+        <header className={`w-full fixed top-0 left-0 flex justify-between items-center px-6 py-8 bg-transparent z-20`}>
+            {/* Dark Mode Toggle Button */}
+            <button
+                onClick={toggleDarkMode}
+                className={`w-12 h-6 rounded-full flex items-center transition-all duration-500 ${darkMode ? 'bg-red-400' : 'bg-gray-400'}`}
+            >
+                <div
+                    className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-500 ${darkMode ? 'translate-x-6' : 'translate-x-0'}`}
+                ></div>
+            </button>
 
-      <div className="w-24">
-        <a href="#home">
-            <img 
-            src={headerLogo}
-            alt="Logo"
-            className="w-full h-auto"
-            />
-        </a>
-      </div>
-      
-      <nav className="hidden md:flex space-x-8">
-        <ul className="flex space-x-8">
-          <li>
-            <a href="#about" className="text-xl font-bold text-white hover:text-red-400">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="text-xl font-bold text-white hover:text-red-400">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="text-xl font-bold text-white hover:text-red-400">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-      
-      <div className="md:hidden">
-        <button className="text-white">
-          <FontAwesomeIcon icon={faBars} className="w-8 h-8" />
-        </button>
-      </div>
-    </header>
-  );
+            {/* Hamburger Menu */}
+            <button className="text-black dark:text-white">
+                <FontAwesomeIcon icon={faBars} className="w-8 h-8" />
+            </button>
+        </header>
+    );
 };
 
 export default Header;
