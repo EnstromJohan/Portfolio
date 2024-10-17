@@ -52,7 +52,7 @@ const AboutMe = () => {
             <img
                 src={image}
                 alt="Photo"
-                className="pt-20 w-4/5 h-auto rounded-e-full transition-opacity duration-1000 ease-in-out opacity-0 fade-in grayscale -ml-8"
+                className="pt-20 w-4/5 h-auto rounded-e-full transition-opacity duration-1000 ease-in-out opacity-0 grayscale -ml-8"
             />
         </section>
     );
