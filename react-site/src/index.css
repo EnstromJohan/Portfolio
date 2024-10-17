@@ -31,17 +31,18 @@ code {
   fill: white;
 }
 
+
 @keyframes rotateLogo {
-  0% {
+  from {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1080deg);
   }
 }
 
 .rotate-on-change {
-  animation: rotateLogo 1s ease-in-out;
+  animation: rotateLogo 2s ease-in-out;
 }
 
 .fade-in {
@@ -50,7 +51,7 @@ code {
 }
 
 .fade-in-visible {
-  opacity: 2;
+  opacity: 1;
   transform: translateY(0);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
