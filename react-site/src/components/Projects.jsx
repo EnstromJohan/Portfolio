@@ -21,21 +21,6 @@ const projects = [
         tools: ['React', 'Redux', 'Firebase'],
         description: 'An online store with user authentication and shopping cart features.',
     },
-    {
-        name: 'E-commerce Store',
-        tools: ['React', 'Redux', 'Firebase'],
-        description: 'An online store with user authentication and shopping cart features.',
-    },
-    {
-        name: 'E-commerce Store',
-        tools: ['React', 'Redux', 'Firebase'],
-        description: 'An online store with user authentication and shopping cart features.',
-    },
-    {
-        name: 'E-commerce Store',
-        tools: ['React', 'Redux', 'Firebase'],
-        description: 'An online store with user authentication and shopping cart features.',
-    },
 ];
 
 const Projects = () => {
@@ -72,39 +57,58 @@ const Projects = () => {
 
     return (
         <section className="min-h-screen flex flex-col justify-start text-black dark:text-white">
-            <h3 className="text-3xl text-left font-bold mb-4">Projects</h3>
-            <div className="relative w-full max-4-xl">
+            <h3 className="text-3xl text-left mb-8">Projects</h3>
+            <div className="relative w-full max-w-4xl space-y-4">
                 {projects.map((project, index) => (
                     <div
                         key={index}
                         ref={(el) => (projectRefs.current[index] = el)}
-                        className={`stack-card transition-all duration-700 ease-in-out p-4 border rounded-lg shadow-sm bg-neutral-100 dark:bg-neutral-800`}
+                        className={`stack-card transition-all duration-700 ease-in-out rounded-lg shadow-lg bg-neutral-100 dark:bg-neutral-900`}
                         style={{
                             position: 'sticky',
-                            top: `${index * 40}px`, // overlapping effect when scrolling
+                            top: `${index * 40}px`,
                             zIndex: index,
-                            marginBottom: '50px',
+                            marginBottom: '20px',
+                            padding: '0px', // Remove padding to align UI top flush
                         }}
                     >
-                        <p className="text-sm mb-1 text-purple-500">{`const project = {`}</p>
-                        <div className="pl-4">
+                        {/* Mac UI-liknande topp direkt kopplat till stack-card */}
+                        <div className="flex items-center justify-start w-full bg-neutral-200 dark:bg-neutral-700 rounded-t-lg">
+                            <div className="flex space-x-2 p-2">
+                                <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+                                <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                                <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                            </div>
+                            <h4 className="text-lg font-semibold ml-4">{project.name}</h4>
+                        </div>
+
+                        {/* Projektinformation */}
+                        <div className="pt-4 pl-4 pr-4 pb-8">
+                            <p className="text-sm mb-1 text-purple-500">{`const project = {`}</p>
                             <p className="text-sm text-red-400">
-                                name: <span className="text-green-400 dark:text-white">"{project.name}",</span>
+                                name: <span className="text-blue-600 dark:text-white">"{project.name}",</span>
                             </p>
                             <p className="text-sm text-red-400">
                                 tools: [
                                 {project.tools.map((tool, i) => (
-                                    <span key={i} className="text-green-400 dark:text-white">
+                                    <span key={i} className="text-blue-600 dark:text-white">
                                         "{tool}"{i < project.tools.length - 1 ? ', ' : ''}
                                     </span>
                                 ))}
                                 ],
                             </p>
                             <p className="text-sm text-red-400">
-                                description: <span className="text-green-400 dark:text-white">"{project.description}"</span>
+                                description: <span className="text-blue-600 dark:text-white">"{project.description}"</span>
                             </p>
+                            <p className="text-sm text-purple-500">{`}`}</p>
                         </div>
-                        <p className="text-sm text-purple-500">{`}`}</p>
+
+                        {/* Knapp längst ner på kortet */}
+                        <button
+                            className="w-full mt-0 py-2 font-semibold bg-neutral-200 dark:bg-neutral-700 rounded-b-lg transition-all duration-300"
+                        >
+                            View Repository
+                        </button>
                     </div>
                 ))}
             </div>

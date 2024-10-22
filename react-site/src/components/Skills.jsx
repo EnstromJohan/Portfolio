@@ -71,7 +71,7 @@ const Skills = () => {
   return (
     <section
       ref={skillsRef}
-      className="flex flex-col items-center justify-start p-8 pt-20 opacity-0 fade-in transition-opacity duration-1000 ease-in-out text-black dark:text-white my-5"
+      className="flex flex-col items-center justify-start pt-20 opacity-0 fade-in transition-opacity duration-1000 ease-in-out text-black dark:text-white my-5"
     >
       <div className="w-full max-w-4xl">
         <h3 className="text-3xl text-right mb-6 mt-10">Skills</h3>
