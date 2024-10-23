@@ -24,7 +24,7 @@ const Skills = () => {
 
   const settings = {
     infinite: true,
-    speed: 4000,
+    speed: 2000,
     slidesToShow: 3, // Number of skills visible at a time
     slidesToScroll: 1,
     autoplay: true,
@@ -71,7 +71,7 @@ const Skills = () => {
   return (
     <section
       ref={skillsRef}
-      className="flex flex-col items-center justify-start pt-20 opacity-0 fade-in transition-opacity duration-1000 ease-in-out text-black dark:text-white my-5"
+      className="flex flex-col items-center justify-start pt-10 opacity-0 fade-in transition-opacity duration-1000 ease-in-out text-black dark:text-white"
     >
       <div className="w-full max-w-4xl">
         <h3 className="text-3xl text-right mb-6 mt-10">Skills</h3>

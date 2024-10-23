@@ -1,61 +1,92 @@
-import React, { useEffect, useRef } from "react";
-import image from '../assets/pic1.jpg';
+import React, { useState } from 'react';
+import image from '../assets/picOne.jpg';
+import LinkedInIcon from '../assets/icons/linkedin.svg';
+import GitHubIcon from '../assets/icons/github.svg';
 
-const AboutMe = () => {
-    const aboutSectionRef = useRef(null);
+const AboutMeCard = () => {
+    const [isFlipped, setIsFlipped] = useState(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-visible');
-                    } else {
-                        entry.target.classList.remove('fade-in-visible');
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        if (aboutSectionRef.current) {
-            const sectionChildren = aboutSectionRef.current.children;
-            Array.from(sectionChildren).forEach((child) => observer.observe(child));
-        }
-
-        return () => {
-            if (aboutSectionRef.current) {
-                const sectionChildren = aboutSectionRef.current.children;
-                Array.from(sectionChildren).forEach((child) => observer.unobserve(child));
-            }
-        };
-    }, []);
+    const handleFlip = () => {
+        setIsFlipped((prev) => !prev);
+    };
 
     return (
-        <section
-            ref={aboutSectionRef}
-            className="min-h-screen flex flex-col items-start justify-start pt-10 px-4 text-black dark:text-white"
-        >
-            <h3 className="text-3xl justify-start text-left mb-2 opacity-0 fade-in transition-opacity duration-1000 ease-in-out">
-                About me
-            </h3>
-            <p className="max-w-3xl text-left text-lg opacity-0 fade-in transition-opacity duration-1000 ease-in-out">
-                Hello there! My name is Johan Enström and I am a recently graduated software developer specialized in .NET from Sweden. My journey
-                into software development started with curiosity and grew into passion for creating solutions that make a difference.
-                I studied at IT-Högskolan, where I worked on various projects that gave me practical experience in building applications
-                and working in collaborative environments. 
-                <br/>
-                <br/>
-                I love challenges and learning new things, and I value being part of a team where I can grow and contribute. My goal is to
-                help create meaningful software that brings value to users while always striving to improve myself.
-            </p>
-            <img
-                src={image}
-                alt="Photo"
-                className="pt-20 w-4/5 h-auto rounded-e-full transition-opacity duration-1000 ease-in-out opacity-0 grayscale -ml-8"
-            />
+        <section className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative">
+            <div className="perspective w-full max-w-md relative">
+                <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
+                    {/* Front Side */}
+                    <div className="flip-card-front bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4">
+                        {/* Image Container */}
+                        <div className="flex justify-center mb-4 p-4">
+                            <div className="w-96 h-96 overflow-hidden rounded-lg shadow-md">
+                                <img
+                                    src={image}
+                                    alt="Photo"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                        {/* Bottom Information */}
+                        <div className="text-left mb-4 ml-4">
+                            <h3 className="text-lg text-left font-bold text-black dark:text-white">Johan Enström</h3>
+                            <p className="text-sm text-neutral-600 dark:text-neutral-400">Software Developer</p>
+                        </div>
+                         {/* Progress Bar */}
+                         <div className="flex flex-col items-center mb-4 px-4"> {/* Centered content */}
+                            <div className="w-full h-1 bg-neutral-300 dark:bg-neutral-700 rounded-full overflow-hidden">
+                                <div className="bg-white h-full w-1/6 transition-all duration-500"></div>
+                            </div>
+                            {/* Time indicators */}
+                            <div className="flex justify-between w-full mt-1">
+                                <span className="text-xs text-neutral-600 dark:text-neutral-400">2:00</span>
+                                <span className="text-xs text-neutral-600 dark:text-neutral-400">-40:00</span>
+                            </div>
+                        </div>
+                        {/* Action Buttons */}
+                        <div className="flex items-center justify-around pt-4 relative">
+                            <a 
+                                href="https://github.com/your-github" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="pointer-events-auto"
+                            >
+                                <img src={GitHubIcon} alt="GitHub" className="w-8 h-18 ml-10" />
+                            </a>
+                            {/* Play Button */}
+                            <button
+                                className="w-12 h-12 bg-neutral-500 text-white rounded-full flex items-center justify-center font-semibold transition-all duration-300 ease-in-out pointer-events-auto"
+                                onClick={handleFlip}
+                            >
+                                ▶
+                            </button>
+                            <a 
+                                href="https://www.linkedin.com/in/your-linkedin" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="pointer-events-auto"
+                            >
+                                <img src={LinkedInIcon} alt="LinkedIn" className="w-8 h-8 mr-10" />
+                            </a>
+                        </div>
+                    </div>
+                    {/* Back Side */}
+                    <div className="flip-card-back bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4">
+                        <div className="text-center mb-4">
+                            <h3 className="text-lg font-bold text-black dark:text-white">About Me</h3>
+                            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                                Hi, I'm Johan Enström. A passionate software developer specialized in .NET, looking to create meaningful software and collaborate in an exciting team.
+                            </p>
+                        </div>
+                        <div className="flex justify-center mt-4">
+                            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg" onClick={handleFlip}>
+                                View Resume
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 };
 
-export default AboutMe;
+export default AboutMeCard;

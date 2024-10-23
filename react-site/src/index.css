@@ -10,17 +10,15 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   overflow: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 h3 {
@@ -36,7 +34,6 @@ h3 {
   fill: white;
 }
 
-
 @keyframes rotateLogo {
   from {
     transform: rotate(0deg);
@@ -50,18 +47,19 @@ h3 {
   animation: rotateLogo 2s ease-in-out;
 }
 
+/* Animation Styles */
 .fade-in {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s ease-in-out
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .fade-in-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
+/* Stack card effect */
 .stack-card {
   position: relative;
   opacity: 0;
@@ -71,5 +69,68 @@ h3 {
 
 .stacked-visible {
   opacity: 1;
-  transform: translateY(0); 
+  transform: translateY(0);
+}
+
+/* Flip card styles specifically for AboutMeCard */
+.perspective {
+  perspective: 1000px; /* This is needed to create a 3D perspective for the card flip */
+  perspective-origin: center;
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .flip-card {
+    transition: transform 0.5s ease-in-out; /* Reduce animation time on mobile */
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1rem; /* Smaller padding for mobile */
+  }
+
+  .progress-bar-container {
+    height: 2px; /* Slightly thicker bar on mobile for better visibility */
+  }
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+  outline: none;
+  z-index: 15; /* Ensures buttons are always clickable */
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.95); /* Small scaling for feedback */
 }
