@@ -1,47 +1,60 @@
 import React, { useEffect, useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import CsharpLogo from "../assets/icons/Csharp.svg";
-import DotnetLogo from "../assets/icons/NET core.svg";
-import NodejsLogo from "../assets/icons/Node.js.svg";
 import HtmlLogo from "../assets/icons/HTML5.svg";
 import CssLogo from "../assets/icons/CSS3.svg";
-import JavascriptLogo from "../assets/icons/JavaScript.svg";
+import TailwindLogo from "../assets/icons/Tailwind.svg";
+import JsLogo from "../assets/icons/JavaScript.svg";
 import ReactLogo from "../assets/icons/React.svg";
+import CsharpLogo from "../assets/icons/Csharp.svg";
+import NetLogo from "../assets/icons/Net.svg";
+import NodeLogo from "../assets/icons/Node.js.svg";
+import SqlLogo from "../assets/icons/Sql.svg";
+import MongoDbLogo from "../assets/icons/MongoDB.svg";
+import GitLogo from "../assets/icons/Git.svg";
+import DevOpsLogo from "../assets/icons/DevOps.svg";
+import GitHubLogo from "../assets/icons/icongithub.svg";
+import PostmanLogo from "../assets/icons/Postman.svg";
+import DockerLogo from "../assets/icons/Docker.svg";
+import JiraLogo from "../assets/icons/Jira.svg";
+import TrelloLogo from "../assets/icons/Trello.svg";
+import VSCodeLogo from "../assets/icons/VisualStudioCode.svg";
+import VSLogo from "../assets/icons/VisualStudio.svg";
+import FigmaLogo from "../assets/icons/Figma.svg";
+import PreviousIcon from "../assets/icons/previous.svg";
+import { ReactComponent as LogoOne } from '../assets/logo.svg';
+import NextIcon from "../assets/icons/next.svg"; 
 
-const Skills = () => {
-  const skills = [
+
+
+const Skills = ( {handleNextSlide, handlePrevSlide} ) => {
+  const frontendSkills = [
+    { name: "HTML", icon: HtmlLogo},
+    { name: "CSS", icon: CssLogo},
+    { name: "Tailwind", icon: TailwindLogo},
+    { name: "JavaScript", icon: JsLogo},
+    { name: "React", icon: ReactLogo}
+  ]
+
+  const backendSkills = [
     { name: "C#", icon: CsharpLogo },
-    { name: ".NET Core", icon: DotnetLogo },
-    { name: "Node.js", icon: NodejsLogo },
-    { name: "HTML", icon: HtmlLogo },
-    { name: "CSS", icon: CssLogo },
-    { name: "JavaScript", icon: JavascriptLogo },
-    { name: "React", icon: ReactLogo },
-  ];
+    { name: ".NET", icon: NetLogo },
+    { name: "Node.js", icon: NodeLogo },
+    { name: "SQL", icon: SqlLogo },
+    { name: "MongoDB", icon: MongoDbLogo }
 
-  const settings = {
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 3, // Number of skills visible at a time
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    pauseOnHover: false,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2, // For smaller screens
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  ]
+
+  const otherSkills = [
+    { name: "Git", icon: GitLogo},
+    { name: "Azure DevOps", icon: DevOpsLogo},
+    { name: "GitHub", icon: GitHubLogo},
+    { name: "Postman", icon: PostmanLogo},
+    { name: "Docker", icon: DockerLogo},
+    { name: "Jira", icon: JiraLogo},
+    { name: "Trello", icon: TrelloLogo},
+    { name: "VS Code", icon: VSCodeLogo},
+    { name: "VS Studio", icon: VSLogo},
+    { name: "Figma", icon: FigmaLogo},
+  ]
 
   const skillsRef = useRef(null);
 
@@ -50,7 +63,7 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
+            entry.target.classList.add("fade-in-visible");
           }
         });
       },
@@ -71,24 +84,92 @@ const Skills = () => {
   return (
     <section
       ref={skillsRef}
-      className="flex flex-col items-center justify-start pt-10 opacity-0 fade-in transition-opacity duration-1000 ease-in-out text-black dark:text-white"
+      className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative"
     >
-      <div className="w-full max-w-4xl">
-        <h3 className="text-3xl text-right mb-6 mt-10">Skills</h3>
-        <Slider {...settings}>
-          {skills.map((skill, index) => (
-            <div key={index} className="px-4">
-              <div className="w-36 h-36 bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-lg shadow-md p-2 transition-all duration-300 ease-in-out hover:scale-105">
-                <img
-                  src={skill.icon}
-                  alt={`${skill.name} icon`}
-                  className="h-12 w-12 mb-4"
-                />
-                <p className="text-lg font-semibold">{skill.name}</p>
-              </div>
+      <div className="perspective w-full max-w-md relative">
+        <div className="flip-card-front bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px] ">
+
+          <h3 className="text-3xl text-Lefter font-semibold mt-8">Skills</h3>
+          <div className="w-full h-[1px] bg-neutral-400 dark:bg-neutral-600 relative top-4"></div>
+          {/*Container för icons*/}
+          <div className="h-96 overflow-hidden rounded-lg shadow-md px-4 mt-12">
+            <p className="text-center text-s pt-4">Frontend</p>
+            <div className="flex flex-wrap justify-center pt-2 gap-3">
+              {frontendSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                >
+                  <img
+                    src={skill.icon}
+                    alt={`$skill.name} icon `}
+                    className="h-10 w-10"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </Slider>
+            <p className="text-center text-s pt-6">Backend</p>
+            <div className="flex flex-wrap justify-center pt-2 gap-3">
+              {backendSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                >
+                  <img
+                    src={skill.icon}
+                    alt={`$skill.name} icon `}
+                    className="h-10 w-10"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-s pt-6">Version control & Tools</p>
+            <div className="flex flex-wrap justify-center pt-2 gap-3">
+              {otherSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                >
+                  <img
+                    src={skill.icon}
+                    alt={`$skill.name} icon `}
+                    className={`h-10 w-10 ${
+                      skill.name == "GitHub" ? "dark:invert" : ""
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full h-[1px] bg-neutral-400 dark:bg-neutral-600 relative"></div>
+          <div className="flex items-center justify-between px-6 mt-12">
+
+            {/*Previous*/}
+            <button onClick={handlePrevSlide} className="flex items-center ">
+              <img
+                src={PreviousIcon}
+                alt="Previous slide"
+                className="w-6 h-6 ml-8 dark:invert"
+              />
+            </button>
+
+            {/*Logo*/}
+            <div className="w-10 h-10">
+              <LogoOne />
+            </div>
+
+            {/*Next*/}
+            <button onClick={handleNextSlide} className="flex items-center ">
+              <img
+                src={NextIcon}
+                alt="Previous slide"
+                className="w-6 h-6 mr-8 dark:invert"
+              />
+            </button>
+
+            
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -47,7 +47,6 @@ h3 {
   animation: rotateLogo 2s ease-in-out;
 }
 
-/* Animation Styles */
 .fade-in {
   opacity: 0;
   transform: translateY(50px);
@@ -59,7 +58,6 @@ h3 {
   transform: translateY(0);
 }
 
-/* Stack card effect */
 .stack-card {
   position: relative;
   opacity: 0;
@@ -72,9 +70,9 @@ h3 {
   transform: translateY(0);
 }
 
-/* Flip card styles specifically for AboutMeCard */
+
 .perspective {
-  perspective: 1000px; /* This is needed to create a 3D perspective for the card flip */
+  perspective: 1000px; 
   perspective-origin: center;
 }
 
@@ -107,24 +105,24 @@ h3 {
 
 @media (max-width: 768px) {
   .flip-card {
-    transition: transform 0.5s ease-in-out; /* Reduce animation time on mobile */
+    transition: transform 0.5s ease-in-out;
   }
 
   .flip-card-front,
   .flip-card-back {
-    padding: 1rem; /* Smaller padding for mobile */
+    padding: 1rem; 
   }
 
   .progress-bar-container {
-    height: 2px; /* Slightly thicker bar on mobile for better visibility */
+    height: 2px; 
   }
 }
 
-/* Button styles */
+
 button {
   cursor: pointer;
   outline: none;
-  z-index: 15; /* Ensures buttons are always clickable */
+  z-index: 15; 
 }
 
 button:focus {
@@ -132,5 +130,5 @@ button:focus {
 }
 
 button:active {
-  transform: scale(0.95); /* Small scaling for feedback */
+  transform: scale(0.95); 
 }

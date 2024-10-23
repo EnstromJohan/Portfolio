@@ -14,11 +14,6 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                     className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-500 ${darkMode ? 'translate-x-6' : 'translate-x-0'}`}
                 ></div>
             </button>
-
-            {/* Hamburger Menu */}
-            <button className="text-black dark:text-white">
-                <FontAwesomeIcon icon={faBars} className="w-8 h-8" />
-            </button>
         </header>
     );
 };
