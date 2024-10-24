@@ -17,7 +17,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
     };
 
     return (
-        <section className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative">
+        <section className="flex items-start justify-center px-4 text-black dark:text-white relative">
             <div className="perspective w-full max-w-md relative">
                 <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
                     {/*Front Side*/}

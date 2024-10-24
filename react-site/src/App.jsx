@@ -4,6 +4,7 @@ import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -43,7 +44,7 @@ const App = () => {
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <Landing />
 
-        <div className="min-h-screen flex items-center justify-center pt-8">
+        <div className="flex items-center justify-center pt-8">
           <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
             spaceBetween={20}
@@ -71,9 +72,10 @@ const App = () => {
             ))}
           </Swiper>
         </div>
-
+        <Contact />
       {/* Footer */}
-      <Footer />
+        <Footer />
+
     </div>
   );
 };

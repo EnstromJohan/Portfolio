@@ -82,7 +82,7 @@ const Skills = ({ handleNextSlide, handlePrevSlide }) => {
   return (
     <section
       ref={skillsRef}
-      className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative"
+      className=" flex items-start justify-center px-4 text-black dark:text-white relative"
     >
       <div className="perspective w-full max-w-md relative">
         <div className="bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">

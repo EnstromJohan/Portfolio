@@ -6,7 +6,7 @@ import {
 
 const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
   return (
-    <section className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative">
+    <section className=" flex items-start justify-center px-4 text-black mb-20 dark:text-white relative">
       <div className="perspective w-full max-w-md relative">
         <div className="bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
           <div className="flex justify-center mb-4 p-4">
