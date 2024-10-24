@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +8,10 @@ const Contact = () => {
     email: '',
     message: ''
   });
+
+  const [statusMessage, setStatusMessage] = useState('')
+  const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,8 +22,26 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
+    e.preventDefault()
+    setIsLoading(true)
+    emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+        },
+        process.env.REACT_APP_EMAILJS_USER_ID
+    ).then((result) => {
+        setStatusMessage("Email was succesfully sent")
+        setIsError(false)
+        setIsLoading(false)
+    }).catch((error) => {
+        setStatusMessage("There was an error sending the email. Please try again. ")
+        setIsError(true)
+        setIsLoading(false)
+    })
   };
 
   return (
@@ -44,7 +68,7 @@ const Contact = () => {
                     name='email'
                     value={formData.email}
                     onChange={handleChange}
-                    className='mt-1 w-full p-2 rounded-md bg-neutral-200 dark:bg-neutral-700 text-black dark:text-white shadow-md'
+                    className='mt-1 w-full p-2 rounded-md bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-white shadow-md'
                     required
                 />
                 </label>
@@ -56,7 +80,7 @@ const Contact = () => {
                             name='message'
                             value={formData.message}
                             onChange={handleChange}
-                            className='mt-1 w-full p-2 rounded-md bg-neutral-200 dark:bg-neutral-700 text-black dark:text-white shadow-md'
+                            className='mt-1 w-full p-2 rounded-md bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-white shadow-md'
                             rows='6'
                             required
                         />
@@ -65,12 +89,20 @@ const Contact = () => {
                 <div className='flex justify-center'>
                     <button
                         type='submit'
-                        className='w-full bg-neutral-200 font-semibold text-neutral-700 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out shadow-lg'
+                        className={`w-full px-4 py-2 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center shadow-lg
+                            ${isLoading ? ' bg-neutral-200 dark:bg-neutral-700 cursor-not-allowed' : 'bg-neutral-200 dark:bg-neutral-700 hover:bg-neutral-300'}
+                             text-neutral-700 dark:text-white font-semibold`}
+                        disabled={isLoading}
                     >
-                        Submit
+                        {isLoading ? <AiOutlineLoading3Quarters className='animate-spin mr-2' /> : 'Submit'}
                     </button>
                 </div>
         </form>
+        {statusMessage && (
+            <div className={`mt-4 w-full max-w-md p-2 rounded-lg text-center font-semibold ${isError ? 'bg-red-500 text-white' : 'bg-green-500 text-white'}`}>
+                {statusMessage}
+            </div>
+        )}
     </section>
   );
 };

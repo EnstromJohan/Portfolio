@@ -56,28 +56,28 @@ const Skills = ({ handleNextSlide, handlePrevSlide }) => {
 
   const skillsRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           entry.target.classList.add("fade-in-visible");
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 }
+  //   );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
-    }
+  //   if (skillsRef.current) {
+  //     observer.observe(skillsRef.current);
+  //   }
 
-    return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (skillsRef.current) {
+  //       observer.unobserve(skillsRef.current);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <section
