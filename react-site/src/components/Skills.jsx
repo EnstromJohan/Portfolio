@@ -91,7 +91,7 @@ const Skills = ( {handleNextSlide, handlePrevSlide} ) => {
 
           <h3 className="text-3xl text-Lefter font-semibold mt-8">Skills</h3>
           <div className="w-full h-[1px] bg-neutral-400 dark:bg-neutral-600 relative top-4"></div>
-          {/*Container för icons*/}
+          {/*Container icons*/}
           <div className="h-96 overflow-hidden rounded-lg shadow-md px-4 mt-12">
             <p className="text-center text-s pt-4">Frontend</p>
             <div className="flex flex-wrap justify-center pt-2 gap-3">
