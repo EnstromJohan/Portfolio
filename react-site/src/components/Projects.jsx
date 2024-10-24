@@ -59,7 +59,7 @@ const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
               href="https://github.com/your-repo"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-700 dark:invert text-white px-2 py-2 rounded-md font-semibold pointer-events-auto"
+              className=" text-neutral-600 border-2 border-neutral-500 dark:border-neutral-500 dark:text-neutral-400 px-2 py-2 rounded-md pointer-events-auto"
             >
               View Repository
             </a>

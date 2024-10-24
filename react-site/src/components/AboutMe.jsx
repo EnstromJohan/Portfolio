@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import image from '../assets/picOne.jpg';
+import Image from '../assets/picOne.jpg';
+import Photo from '../assets/pic1.jpg';
 import LinkedInIcon from '../assets/icons/linkedin.svg';
 import GitHubIcon from '../assets/icons/github.svg';
 import NextIcon from "../assets/icons/next.svg";
+import CV from "../assets/CV_jeng.pdf";
+import ReturnIcon from "../assets/icons/return.svg";
 
 const AboutMeCard = ({ handleNextSlide}) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -21,7 +24,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                         <div className="flex justify-center mb-4 p-4">
                             <div className="w-96 h-96 overflow-hidden rounded-lg shadow-md">
                                 <img
-                                    src={image}
+                                    src={Image}
                                     alt="Photo"
                                     className="w-full h-full object-cover"
                                 />
@@ -54,7 +57,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                             </a>
 
                             <button
-                                className="w-12 h-12 bg-neutral-800 dark:bg-white text-white dark:text-neutral-800 rounded-full flex items-center justify-center pointer-events-auto"
+                                className="w-12 h-12 bg-neutral-600 dark:bg-neutral-400 text-white dark:text-neutral-800 rounded-full flex items-center justify-center pointer-events-auto"
                                 onClick={handleFlip}
                             >
                                 ▶
@@ -78,17 +81,52 @@ const AboutMeCard = ({ handleNextSlide}) => {
                     </div>
 
                     {/*Back Side*/}
-                    <div className="flip-card-back bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4">
+                    <div className="flip-card-back bg-neutral-200 dark:bg-neutral-700 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
                         <div className="text-center mb-4">
-                            <h3 className="text-lg font-bold text-black dark:text-white">About Me</h3>
-                            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                                Hi, I'm Johan Enström. A passionate software developer specialized in .NET, looking to create meaningful software and collaborate in an exciting team.
-                            </p>
+                            <h3 className="text-lg text-left font-bold text-neutral-700 dark:text-white">About Me</h3>
+                            <p className="text-xs text-left text-neutral-700 dark:text-white">
+                            Hi, I'm Johan Enström, a software developer who recently completed a two-year program in system development 
+                            with a focus on .NET. 
+                            From my studies and internship, I have built a solid foundation in C# and the .NET ecosystem, 
+                            as well as frontend technologies. 
+                            I also have good knowledge of version control and DevOps practices, including Git, 
+                            Azure DevOps, and working with CI/CD pipelines.
+                            <br/>
+                            <br/>
+                            During my internships, I worked on developing platforms using ASP.NET Core and Azure SQL, 
+                            and I also specialized in web scraping and API integration. 
+                            I gained hands-on experience in building efficient, well-tested backend solutions and working in agile environments.
+                            <br/>
+                            <br/>   
+                            </p>  
+                            <div className="flex items-center text-xs text-left text-neutral-700 dark:text-white">
+                                <div className='w-1/2 pr-4'>
+                                    <p>
+                                    I enjoy working in teams, learning new things, and facing challenges.
+                                    My positive attitude, loyalty, and strong communication skills have 
+                                    helped me contribute effectively in different environments. 
+                                    I'm now looking forward to applying my skills and continuing to grow as part of a supportive team.
+                                    </p>
+                                </div>
+                                <div className='w-1/2 flex shadow-lg items-center justify-center'>
+                                <img
+                                    src={Photo} alt="Photo" className="rounded-md  shadow-lg w-64 h-56 object-cover"
+                                />
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex justify-center mt-4">
-                            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg" onClick={handleFlip}>
-                                View Resume
+                        <div className="flex justify-left mt-8 gap-4">
+                            <button className="w-12 h-12 dark:text-neutral-800 rounded-full flex items-center justify-center" onClick={handleFlip}>
+                                <img src={ReturnIcon} alt="Return" className="w-8 h-8  pt-1 dark:invert" />
                             </button>
+                            <a 
+                                href={CV} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-neutral-400 dark:text-neutral-300 dark:text-white-700 border-2 border-neutral-500 dark:border-neutral-400 font-semibold pt-3 px-4 py-2 rounded-lg"
+                            >
+                                View Resume
+                            </a>
                         </div>
                     </div>
                 </div>
