@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Image from '../assets/picOne.jpg';
 import Photo from '../assets/pic1.jpg';
-import LinkedInIcon from '../assets/icons/linkedin.svg';
-import GitHubIcon from '../assets/icons/github.svg';
-import NextIcon from "../assets/icons/next.svg";
 import CV from "../assets/CV_jeng.pdf";
-import ReturnIcon from "../assets/icons/return.svg";
+import {
+    LinkedInIcon,
+    GitHubLogo,
+    NextIcon,
+    ReturnIcon
+} from "../assets/icons";
 
 const AboutMeCard = ({ handleNextSlide}) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -36,7 +38,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                             <p className="text-sm text-neutral-600 dark:text-neutral-400">Software Developer</p>
                         </div>
                          {/*Bar*/}
-                         <div className="flex flex-col items-center mb-4 px-4"> {/* Centered content */}
+                         <div className="flex flex-col items-center mb-4 px-4">
                             <div className="w-full h-1 bg-neutral-300 dark:bg-neutral-700 rounded-full overflow-hidden">
                                 <div className="bg-white h-full w-1/6 transition-all duration-500"></div>
                             </div>
@@ -53,7 +55,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                                 rel="noopener noreferrer" 
                                 className="pointer-events-auto"
                             >
-                                <img src={GitHubIcon} alt="GitHub" className="w-8 h-18 ml-14" />
+                                <img src={GitHubLogo} alt="GitHub" className="w-8 h-18 ml-14" />
                             </a>
 
                             <button
@@ -80,7 +82,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                         </div>
                     </div>
 
-                    {/*Back Side*/}
+                    {/*Backside about me*/}
                     <div className="flip-card-back bg-neutral-200 dark:bg-neutral-700 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
                         <div className="text-center mb-4">
                             <h3 className="text-lg text-left font-bold text-neutral-700 dark:text-white">About Me</h3>

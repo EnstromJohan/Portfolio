@@ -1,60 +1,58 @@
 import React, { useEffect, useRef } from "react";
-import HtmlLogo from "../assets/icons/HTML5.svg";
-import CssLogo from "../assets/icons/CSS3.svg";
-import TailwindLogo from "../assets/icons/Tailwind.svg";
-import JsLogo from "../assets/icons/JavaScript.svg";
-import ReactLogo from "../assets/icons/React.svg";
-import CsharpLogo from "../assets/icons/Csharp.svg";
-import NetLogo from "../assets/icons/Net.svg";
-import NodeLogo from "../assets/icons/Node.js.svg";
-import SqlLogo from "../assets/icons/Sql.svg";
-import MongoDbLogo from "../assets/icons/MongoDB.svg";
-import GitLogo from "../assets/icons/Git.svg";
-import DevOpsLogo from "../assets/icons/DevOps.svg";
-import GitHubLogo from "../assets/icons/icongithub.svg";
-import PostmanLogo from "../assets/icons/Postman.svg";
-import DockerLogo from "../assets/icons/Docker.svg";
-import JiraLogo from "../assets/icons/Jira.svg";
-import TrelloLogo from "../assets/icons/Trello.svg";
-import VSCodeLogo from "../assets/icons/VisualStudioCode.svg";
-import VSLogo from "../assets/icons/VisualStudio.svg";
-import FigmaLogo from "../assets/icons/Figma.svg";
-import PreviousIcon from "../assets/icons/previous.svg";
 import { ReactComponent as LogoOne } from '../assets/logo.svg';
-import NextIcon from "../assets/icons/next.svg"; 
+import {
+  HtmlIcon,
+  CssIcon,
+  TailwindIcon,
+  JsIcon,
+  ReactIcon,
+  CsharpIcon,
+  NetIcon,
+  NodeIcon,
+  SqlIcon,
+  MongoDbIcon,
+  GitIcon,
+  GitHubIcon,
+  PostmanIcon,
+  JiraIcon,
+  TrelloIcon,
+  VSCodeIcon,
+  VSIcon,
+  FigmaIcon,
+  PreviousIcon,
+  NextIcon,
+  DevOpsIcon,
+  DockerIcon
+} from "../assets/icons";
 
-
-
-const Skills = ( {handleNextSlide, handlePrevSlide} ) => {
-  const frontendSkills = [
-    { name: "HTML", icon: HtmlLogo},
-    { name: "CSS", icon: CssLogo},
-    { name: "Tailwind", icon: TailwindLogo},
-    { name: "JavaScript", icon: JsLogo},
-    { name: "React", icon: ReactLogo}
-  ]
-
+const Skills = ({ handleNextSlide, handlePrevSlide }) => {
   const backendSkills = [
-    { name: "C#", icon: CsharpLogo },
-    { name: ".NET", icon: NetLogo },
-    { name: "Node.js", icon: NodeLogo },
-    { name: "SQL", icon: SqlLogo },
-    { name: "MongoDB", icon: MongoDbLogo }
-
-  ]
+    { name: "C#", icon: CsharpIcon },
+    { name: ".NET", icon: NetIcon },
+    { name: "Node.js", icon: NodeIcon },
+    { name: "SQL", icon: SqlIcon },
+    { name: "MongoDB", icon: MongoDbIcon }
+  ];
+  const frontendSkills = [
+    { name: "HTML", icon: HtmlIcon },
+    { name: "CSS", icon: CssIcon },
+    { name: "Tailwind", icon: TailwindIcon },
+    { name: "JavaScript", icon: JsIcon },
+    { name: "React", icon: ReactIcon }
+  ];
 
   const otherSkills = [
-    { name: "Git", icon: GitLogo},
-    { name: "Azure DevOps", icon: DevOpsLogo},
-    { name: "GitHub", icon: GitHubLogo},
-    { name: "Postman", icon: PostmanLogo},
-    { name: "Docker", icon: DockerLogo},
-    { name: "Jira", icon: JiraLogo},
-    { name: "Trello", icon: TrelloLogo},
-    { name: "VS Code", icon: VSCodeLogo},
-    { name: "VS Studio", icon: VSLogo},
-    { name: "Figma", icon: FigmaLogo},
-  ]
+    { name: "Git", icon: GitIcon },
+    { name: "Azure DevOps", icon: DevOpsIcon },
+    { name: "GitHub", icon: GitHubIcon },
+    { name: "Postman", icon: PostmanIcon },
+    { name: "Docker", icon: DockerIcon },
+    { name: "Jira", icon: JiraIcon },
+    { name: "Trello", icon: TrelloIcon },
+    { name: "VS Code", icon: VSCodeIcon },
+    { name: "VS Studio", icon: VSIcon },
+    { name: "Figma", icon: FigmaIcon }
+  ];
 
   const skillsRef = useRef(null);
 
@@ -87,87 +85,66 @@ const Skills = ( {handleNextSlide, handlePrevSlide} ) => {
       className="min-h-screen flex items-start justify-center px-4 text-black dark:text-white mb-20 relative"
     >
       <div className="perspective w-full max-w-md relative">
-        <div className="flip-card-front bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px] ">
+        <div className="bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
+          <div className="flex justify-center items-center mb-4 p-4">
+            <div className="w-96 h-96 overflow-hidden rounded-lg shadow-md bg-neutral-300 dark:bg-neutral-700 p-4">
+              <div className="flex flex-wrap gap-2 justify-left text-left text-md font-semibold items-center mt-8 px-4">
+                {/*Backend*/}
+                <h4 className="w-full mt-4">Backend</h4>
+                {backendSkills.map((skill, index) => (
+                  <img key={index} src={skill.icon} alt={skill.name} className="w-8 h-8" />
+                ))}
 
-          <h3 className="text-3xl text-Lefter font-semibold mt-8">Skills</h3>
-          <div className="w-full h-[1px] bg-neutral-400 dark:bg-neutral-600 relative top-4"></div>
-          {/*Container icons*/}
-          <div className="h-96 overflow-hidden rounded-lg shadow-md px-4 mt-12">
-            <p className="text-center text-s pt-4">Frontend</p>
-            <div className="flex flex-wrap justify-center pt-2 gap-3">
-              {frontendSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center"
-                >
+                {/*Frontend*/}
+                <h4 className="w-full">Frontend</h4>
+                {frontendSkills.map((skill, index) => (
+                  <img key={index} src={skill.icon} alt={skill.name} className="w-8 h-8" />
+                ))}
+
+
+                {/*Version Control/tools*/}
+                <h4 className="w-full mt-4">Version Control & Tools</h4>
+                {otherSkills.map((skill, index) => (
                   <img
+                    key={index}
                     src={skill.icon}
-                    alt={`$skill.name} icon `}
-                    className="h-10 w-10"
+                    alt={skill.name}
+                    className={`w-8 h-8 ${skill.name === "GitHub" ? "dark:invert" : ""}`}
                   />
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-s pt-6">Backend</p>
-            <div className="flex flex-wrap justify-center pt-2 gap-3">
-              {backendSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center"
-                >
-                  <img
-                    src={skill.icon}
-                    alt={`$skill.name} icon `}
-                    className="h-10 w-10"
-                  />
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-s pt-6">Version control & Tools</p>
-            <div className="flex flex-wrap justify-center pt-2 gap-3">
-              {otherSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center"
-                >
-                  <img
-                    src={skill.icon}
-                    alt={`$skill.name} icon `}
-                    className={`h-10 w-10 ${
-                      skill.name == "GitHub" ? "dark:invert" : ""
-                    }`}
-                  />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-          <div className="w-full h-[1px] bg-neutral-400 dark:bg-neutral-600 relative"></div>
-          <div className="flex items-center justify-between px-6 mt-12">
 
-            {/*Previous*/}
-            <button onClick={handlePrevSlide} className="flex items-center ">
-              <img
-                src={PreviousIcon}
-                alt="Previous slide"
-                className="w-6 h-6 ml-8 dark:invert"
-              />
+          <div className="text-left mb-4 px-4">
+            <h3 className="text-lg font-bold text-black dark:text-white">Skills</h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">Tech stack overview</p>
+          </div>
+
+          <div className="flex flex-col items-center mb-4 px-4">
+            <div className="w-full h-1 bg-neutral-300 dark:bg-neutral-700 rounded-full overflow-hidden">
+              <div className="bg-white h-full w-1/6 transition-all duration-500"></div>
+            </div>
+            <div className="flex justify-between w-full mt-1">
+              <span className="text-xs text-neutral-600 dark:text-neutral-400">2:00</span>
+              <span className="text-xs text-neutral-600 dark:text-neutral-400">-40:00</span>
+            </div>
+          </div>
+
+          {/*Navigation and repo link*/}
+          <div className="flex items-center justify-around px-6 relative">
+            <button className="h-12" onClick={handlePrevSlide}>
+              <img src={PreviousIcon} alt="Previous Slide" className="w-6 h-6 dark:invert" />
             </button>
-
+            
             {/*Logo*/}
             <div className="w-10 h-10">
               <LogoOne />
             </div>
 
-            {/*Next*/}
-            <button onClick={handleNextSlide} className="flex items-center ">
-              <img
-                src={NextIcon}
-                alt="Previous slide"
-                className="w-6 h-6 mr-8 dark:invert"
-              />
+            <button className="h-12" onClick={handleNextSlide}>
+              <img src={NextIcon} alt="Next Slide" className="w-6 h-6 dark:invert" />
             </button>
-
-            
           </div>
         </div>
       </div>

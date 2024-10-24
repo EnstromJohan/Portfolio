@@ -1,7 +1,8 @@
 import React from "react";
-import GitHubIcon from "../assets/icons/github.svg";
-import NextIcon from "../assets/icons/next.svg";
-import PreviousIcon from "../assets/icons/previous.svg";
+import {
+    NextIcon,
+    PreviousIcon
+} from "../assets/icons";
 
 const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
   return (
@@ -37,7 +38,7 @@ const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
 
           <div className="text-left mb-4 ml-4">
             <h3 className="text-lg text-left font-bold text-black dark:text-white">Projects</h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">Ongoing journey of learning and building projects</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">Building and growing</p>
           </div>
 
           <div className="flex flex-col items-center mb-4 px-4">
