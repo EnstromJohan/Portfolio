@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
@@ -12,10 +12,24 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './index.css';
 import { projects } from "./projectsData";
+import { ReactComponent as LogoOne } from './assets/logo.svg';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   const swiperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 992)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -32,6 +46,18 @@ const App = () => {
     if (swiperRef.current) {
         swiperRef.current.slidePrev();
     }
+  }
+
+  if (!isMobile) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen text-center px-4">
+        <LogoOne key={darkMode} className="w-96 h-96 mb-4 transition-all duration-1000 ease-in-out rotate-on-change" />
+        <h2 className="text-2xl font-bold text-neutral-800 dark:text-white">
+          This site is currently only available on mobile devices. <br/>
+          Please check on a smaller screen as the desktop version is under construction.
+        </h2>
+      </div>
+    )
   }
 
   return (

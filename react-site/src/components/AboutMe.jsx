@@ -21,7 +21,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
             <div className="perspective w-full max-w-md relative">
                 <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
                     {/*Front Side*/}
-                    <div className="flip-card-front bg-neutral-200 dark:bg-neutral-800 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
+                    <div className="flip-card-front bg-neutral-200 dark:bg-neutral-800 shadow-lg rounded-xl overflow-hidden p-4 h-[640px]">
                         {/*Image Container*/}
                         <div className="flex justify-center mb-4 p-4">
                             <div className="w-96 h-96 overflow-hidden rounded-lg shadow-md">
