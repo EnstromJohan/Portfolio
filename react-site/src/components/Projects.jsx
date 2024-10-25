@@ -57,10 +57,10 @@ const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
               <img src={PreviousIcon} alt="Previous Slide" className="w-6 h-6 dark:invert" />
             </button>
             <a
-              href="https://github.com/your-repo"
+              href={project.repoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className=" text-neutral-600 border-2 border-neutral-500 dark:border-neutral-500 dark:text-neutral-400 px-2 py-2 rounded-md pointer-events-auto"
+              className="font-semibold text-neutral-600 border-2 border-neutral-500 dark:border-neutral-500 dark:text-neutral-400 px-2 py-2 rounded-md pointer-events-auto"
             >
               View Repository
             </a>

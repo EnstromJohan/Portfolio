@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from '../assets/picOne.jpg';
 import Photo from '../assets/pic1.jpg';
-import CV from "../assets/CV_jeng.pdf";
+import CV from "../assets/CvEng.pdf";
 import {
     LinkedInIcon,
     GitHubLogo,
@@ -86,7 +86,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                     <div className="flip-card-back bg-neutral-200 dark:bg-neutral-700 shadow-2xl rounded-xl overflow-hidden p-4 h-[640px]">
                         <div className="text-center mb-4">
                             <h3 className="text-lg text-left font-bold text-neutral-700 dark:text-white">About Me</h3>
-                            <p className="text-xs text-left text-neutral-700 dark:text-white">
+                            <p className="text-xs text-left text-neutral-700 dark:text-neutral-300">
                             Hi, I'm Johan Enström, a software developer who recently completed a two-year program in system development 
                             with a focus on .NET. 
                             From my studies and internship, I have built a solid foundation in C# and the .NET ecosystem, 
@@ -101,7 +101,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                             <br/>
                             <br/>   
                             </p>  
-                            <div className="flex items-center text-xs text-left text-neutral-700 dark:text-white">
+                            <div className="flex items-center text-xs text-left text-neutral-700 dark:text-neutral-300">
                                 <div className='w-1/2 pr-4'>
                                     <p>
                                     I enjoy working in teams, learning new things, and facing challenges.
@@ -119,13 +119,13 @@ const AboutMeCard = ({ handleNextSlide}) => {
                         </div>
                         <div className="flex justify-left mt-8 gap-4">
                             <button className="w-12 h-12 dark:text-neutral-800 rounded-full flex items-center justify-center" onClick={handleFlip}>
-                                <img src={ReturnIcon} alt="Return" className="w-8 h-8  pt-1 dark:invert" />
+                                <img src={ReturnIcon} alt="Return" className="w-8 h-8 dark:invert" />
                             </button>
                             <a 
                                 href={CV} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="text-neutral-400 dark:text-neutral-300 dark:text-white-700 border-2 border-neutral-500 dark:border-neutral-400 font-semibold pt-3 px-4 py-2 rounded-lg"
+                                className="w-full h-10 text-center py-2 px-4 rounded-lg text-neutral-400 dark:text-neutral-300 dark:text-white-700 border-2 border-neutral-500 dark:border-neutral-400 font-semibold "
                             >
                                 View Resume
                             </a>
