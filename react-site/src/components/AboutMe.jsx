@@ -50,7 +50,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
 
                         <div className="flex items-center justify-around pt-4 relative">
                             <a 
-                                href="https://github.com/your-github" 
+                                href="https://github.com/EnstromJohan" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="pointer-events-auto"
@@ -65,7 +65,7 @@ const AboutMeCard = ({ handleNextSlide}) => {
                                 ▶
                             </button>
                             <a 
-                                href="https://www.linkedin.com/in/your-linkedin" 
+                                href="https://linkedin.com/in/enstromjohan" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="pointer-events-auto"
