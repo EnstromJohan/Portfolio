@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
-import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/AboutMe/AboutMe";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
