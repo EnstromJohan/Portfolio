@@ -1,10 +1,11 @@
 import React from "react";
 import Photo from "../../assets/pic1.jpg";
 import PhotoCard from "./PhotoCard";
+import ReturnResume from './ReturnResume';
 
-const BackContent = () => (
-    <div className="text-center mb-4">
-        <h3 className="text-lg text-left font-bold text-neutral-700 dark:text-white pt-2">About me</h3>
+const BackContent = ({ onReturnClick, resumeLink }) => (
+    <div className="text-center w-full">
+        <h3 className="text-lg text-left font-bold text-neutral-700 dark:text-white">About me</h3>
         <p className="text-xs text-left text-neutral-700 dark:text-neutral-300 pt-2">
             Hello there!
             I'm Johan Enström, a software developer who recently completed a two-year program in system development
@@ -15,8 +16,11 @@ const BackContent = () => (
             <br/> 
             During my internships, I worked on developing platforms using ASP.NET Core and Azure SQL. I also specialized
             in web scraping and API integration. I gained hands-on experience in building efficient well-tested backend solutions
-            and working in agile environments.            
+            and working in agile environments. 
+            <br/>           
+            <br/>           
         </p>
+
         <div className="flex items-center text-xs text-left text-neutral-700 dark:text-neutral-300">
             <div className="w-1/2 pr-4">
             <pr>
@@ -27,6 +31,7 @@ const BackContent = () => (
             </div>
             <PhotoCard src={Photo} alt="Profile photo" />
         </div>
+        <ReturnResume onReturnClick={onReturnClick} resumeLink={resumeLink} />
     </div>
 )
 
