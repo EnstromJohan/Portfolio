@@ -1,17 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import Header from "./components/Header";
-import Landing from "./components/Landing";
-import AboutMe from "./components/AboutMe";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { Landing, AboutMe, Skills, Projects, Contact } from "./components/sections";
+import { Footer, Header } from "./components/layout";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './index.css';
-import { projects } from "./projectsData";
+import { projects } from "./data/projectsData";
 import { ReactComponent as LogoOne } from './assets/logo.svg';
 
 const App = () => {

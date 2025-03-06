@@ -2,7 +2,7 @@ import React from "react";
 import {
     NextIcon,
     PreviousIcon
-} from "../assets/icons";
+} from "../../assets/icons";
 
 const Projects = ({ project, handleNextSlide, handlePrevSlide }) => {
   return (

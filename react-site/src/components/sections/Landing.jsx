@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as LogoOne } from '../assets/logo.svg';
+import { ReactComponent as LogoOne } from '../../assets/logo.svg';
 
 const Landing = ( { darkMode }) => {
     return (

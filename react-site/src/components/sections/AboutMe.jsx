@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Image from '../assets/picOne.jpg';
-import Photo from '../assets/pic1.jpg';
-import CV from "../assets/CvEng.pdf";
+import Image from '../../assets/picOne.jpg';
+import Photo from '../../assets/pic1.jpg';
+import CV from "../../assets/CvEng.pdf";
 import {
     LinkedInIcon,
     GitHubLogo,
     NextIcon,
     ReturnIcon
-} from "../assets/icons";
+} from "../../assets/icons";
 
 const AboutMeCard = ({ handleNextSlide}) => {
     const [isFlipped, setIsFlipped] = useState(false);

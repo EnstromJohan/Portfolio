@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { ReactComponent as LogoOne } from '../assets/logo.svg';
+import { ReactComponent as LogoOne } from '../../assets/logo.svg';
 import {
   HtmlIcon,
   CssIcon,
@@ -23,7 +23,7 @@ import {
   NextIcon,
   DevOpsIcon,
   DockerIcon
-} from "../assets/icons";
+} from "../../assets/icons";
 
 const Skills = ({ handleNextSlide, handlePrevSlide }) => {
   const backendSkills = [
