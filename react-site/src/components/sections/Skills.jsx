@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { ReactComponent as LogoOne } from '../../assets/logo.svg';
 import {
   HtmlIcon,
@@ -55,30 +55,6 @@ const Skills = ({ handleNextSlide, handlePrevSlide }) => {
   ];
 
   const skillsRef = useRef(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           entry.target.classList.add("fade-in-visible");
-  //         }
-  //       });
-  //     },
-  //     { threshold: 0.1 }
-  //   );
-
-  //   if (skillsRef.current) {
-  //     observer.observe(skillsRef.current);
-  //   }
-
-  //   return () => {
-  //     if (skillsRef.current) {
-  //       observer.unobserve(skillsRef.current);
-  //     }
-  //   };
-  // }, []);
-
   return (
     <section
       ref={skillsRef}
