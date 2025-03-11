@@ -1,0 +1,129 @@
+@import url('variables.css');
+
+body {
+    background: url('../assets/background.jpg');
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#desktop {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.folder {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    user-select: none;
+}
+
+.folder {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    user-select: none;;
+}
+
+.folder-img {
+    width: 48px;
+    height: 48px;
+}
+
+.window {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 300px;
+    background: white;
+    border: 2px solid black;
+    box-shadow: 4px 4px gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.title-bar {
+    background: navy;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.windows-buttons button {
+    background: silver;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 2px 6px;
+}
+
+.window-buttons button:hover {
+    background: gray;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    background: silver;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    border-top: 2px solid black;
+    box-shadow: inset 2px 2px white, inset -2px -2px gray;
+}
+
+.taskbar-items {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    font-family: 'MS Sans Serif', sans-serif;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: silver;
+    padding: 2px 8px;
+    border: 2px inset gray;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'MS Sans Serif', sans-serif;
+    height: 12px; /* Adjusted to fit inside taskbar */
+}
+
+.start-button:hover {
+    background-color: lightgray;
+}
+
+.start-button img {
+    width: 16px;
+    height: 16px;
+    padding-top: 4px;
+}
+
+.clock {
+    background: silver;
+    padding: 5px 10px;
+    border: 2px inset gray;
+    font-family: monospace;
+}
+
