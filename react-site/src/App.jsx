@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import TagManager from "react-gtm-module";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
@@ -19,6 +20,9 @@ const App = () => {
   const swiperRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
+  useEffect(() => {
+    TagManager.initialize({ gtmId: "GTM-TXKMBJ8S" });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
