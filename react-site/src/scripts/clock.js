@@ -1,4 +1,4 @@
-function updateClock() {
+export function updateClock() {
     const clockElement = document.querySelector(".clock");
     if (!clockElement) return;
 
@@ -12,6 +12,3 @@ function updateClock() {
     clockElement.textContent = `${hours}:${minutes} ${amPm}`;
 }
 
-
-setInterval(updateClock, 1000);
-updateClock();
