@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/DesktopIcons.css";
+import "../styles/desktopIcons.css";
 
 const DesktopIcon = ({ icon, label, onClick }) => {
     return (
