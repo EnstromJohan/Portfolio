@@ -6,7 +6,9 @@ import closeIcon from "../assets/icons/escape.png";
 
 const Window = ({ title, onClose, children }) => {
     const [isMinimized, setIsMinimized] = useState(false);
-    const [position, setPosition] = useState({ x: 100, y: 100 });
+    const [position, setPosition] = useState({ 
+        x: window.innerWidth / 2 - 300, 
+        y: window.innerHeight / 2 - 200 });
     const [dragging, setDragging] = useState(false);
     const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
 

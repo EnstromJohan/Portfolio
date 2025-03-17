@@ -33,7 +33,7 @@ window-title {
 .window-content {
     flex: 1;
     padding: 10px;
-    background: white
+    background: white;
 }
 
 .minimized {

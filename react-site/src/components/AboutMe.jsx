@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ExplorerWindow from "./ExplorerWindow";
 import BrowserWindow from "./BrowserWindow";
-import pdfIcon from "../assets/icons/pdf.png";
+import pdfIcon from "../assets/icons/document.png";
 import cvFile from "../assets/pdf/CvEng.pdf"; // Path to CV
-import "../styles/aboutme.css"; // Import specific styles
+import "../styles/aboutMe.css"; // Import specific styles
 
 const AboutMe = ({ onClose }) => {
     const [openPdf, setOpenPdf] = useState(false);
@@ -15,7 +15,7 @@ const AboutMe = ({ onClose }) => {
                 <div className="aboutme-content">
                     <div className="file-icon" onClick={() => setOpenPdf(true)}>
                         <img src={pdfIcon} alt="CV" />
-                        <span>My_CV.pdf</span>
+                        <span>CV</span>
                     </div>
                 </div>
             </ExplorerWindow>
