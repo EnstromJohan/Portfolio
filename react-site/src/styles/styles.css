@@ -1,129 +1,72 @@
-@import url('variables.css');
-
 body {
-    background: url('../assets/background.jpg');
+    background-image: url('../assets/background.jpg');
     background-size: cover;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-}
-
-#desktop {
-    position: absolute;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.folder {
-    width: 80px;
-    text-align: center;
-    cursor: pointer;
-    margin: 10px;
-    user-select: none;
-}
-
-.folder {
-    width: 80px;
-    text-align: center;
-    cursor: pointer;
-    margin: 10px;
-    user-select: none;;
-}
-
-.folder-img {
-    width: 48px;
-    height: 48px;
-}
-
-.window {
-    position: absolute;
-    top: 100px;
-    left: 200px;
-    width: 300px;
-    background: white;
-    border: 2px solid black;
-    box-shadow: 4px 4px gray;
-    display: flex;
-    flex-direction: column;
-}
-
-.hidden {
-    display: none;
-}
-
-.title-bar {
-    background: navy;
-    color: white;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.windows-buttons button {
-    background: silver;
-    border: 1px solid black;
-    cursor: pointer;
-    margin-left: 4px;
-    padding: 2px 6px;
-}
-
-.window-buttons button:hover {
-    background: gray;
+    overflow: hidden;
 }
 
 .taskbar {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    height: 15px;
-    background: silver;
+    height: 38px; /* Lite smalare för att se mer autentisk ut */
+    background: #c0c0c0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 4px;
-    border-top: 2px solid black;
-    box-shadow: inset 2px 2px white, inset -2px -2px gray;
+    justify-content: space-between;
+    border-top: 2px solid #ffffff; /* Ljus topp */
+    border-bottom: 2px solid #808080; /* Mörk botten */
+    border-left: 2px solid #ffffff; /* Ljus vänsterkant */
+    border-right: 2px solid #808080; /* Mörk högerkant */
+    box-shadow: inset 2px 2px 2px white, inset -2px -2px gray;
+    padding: 0 8px;
 }
 
-.taskbar-items {
-    display: flex;
-    gap: 10px;
-    padding: 5px;
-    font-family: 'MS Sans Serif', sans-serif;
-}
-
+/* Start-knappen */
 .start-button {
     display: flex;
     align-items: center;
+    height: 28px;
     gap: 5px;
-    background: silver;
-    padding: 2px 8px;
-    border: 2px inset gray;
+    background: #c0c0c0;
+    padding: 4px 10px;
     cursor: pointer;
-    font-size: 15px;
-    font-family: 'MS Sans Serif', sans-serif;
-    height: 12px; /* Adjusted to fit inside taskbar */
-}
-
-.start-button:hover {
-    background-color: lightgray;
+    font-family: "MS Sans Serif", sans-serif;
+    font-weight: bold;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    box-shadow: inset 2px 2px 2px white, inset -2px -2px gray;
 }
 
 .start-button img {
-    width: 16px;
-    height: 16px;
-    padding-top: 4px;
+    width: 20px;
+    height: 20px;
 }
 
-.clock {
-    background: silver;
-    padding: 5px 10px;
-    border: 2px inset gray;
-    font-family: monospace;
+/* Klockan */
+.taskbar-clock {
+    background: #c0c0c0; /* Samma färg som taskbaren */
+    border-top: 2px solid #ffffff; /* Ljus topp */
+    border-left: 2px solid #ffffff; /* Ljus vänsterkant */
+    border-right: 2px solid #808080; /* Mörkare högerkant */
+    border-bottom: 2px solid #808080; /* Mörkare bottenkant */
+    
+    height: 26px; /* Justera höjd för att passa taskbaren bättre */
+    padding: 2px 14px; /* Flytta texten mer åt höger */
+    
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 14px;
+    text-align: right;
+    min-width: 75px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    /* Inre skugga för att få den att sjunka in */
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
-
