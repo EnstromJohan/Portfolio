@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ExplorerWindow from "./ExplorerWindow";
 import ProjectWindow from "./ProjectWindow";
 import "../styles/projects.css";
-import projectIcon from "../assets/icons/project.png"; // Icon for project files
-import projectsData from "../data/projectsData"; // Array of project data
+import projectIcon from "../assets/icons/project.png"; 
+import projectsData from "../data/projectsData"; 
 
 const Projects = ({ onClose }) => {
     const [openProject, setOpenProject] = useState(null);

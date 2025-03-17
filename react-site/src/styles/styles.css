@@ -11,20 +11,20 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 38px; /* Lite smalare för att se mer autentisk ut */
+    height: 38px; 
     background: #c0c0c0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 2px solid #ffffff; /* Ljus topp */
-    border-bottom: 2px solid #808080; /* Mörk botten */
-    border-left: 2px solid #ffffff; /* Ljus vänsterkant */
-    border-right: 2px solid #808080; /* Mörk högerkant */
+    border-top: 2px solid #ffffff; 
+    border-bottom: 2px solid #808080; 
+    border-left: 2px solid #ffffff; 
+    border-right: 2px solid #808080; 
     box-shadow: inset 2px 2px 2px white, inset -2px -2px gray;
     padding: 0 8px;
 }
 
-/* Start-knappen */
+
 .start-button {
     display: flex;
     align-items: center;
@@ -47,26 +47,21 @@ body {
     height: 20px;
 }
 
-/* Klockan */
+
 .taskbar-clock {
-    background: #c0c0c0; /* Samma färg som taskbaren */
-    border-top: 2px solid #ffffff; /* Ljus topp */
-    border-left: 2px solid #ffffff; /* Ljus vänsterkant */
-    border-right: 2px solid #808080; /* Mörkare högerkant */
-    border-bottom: 2px solid #808080; /* Mörkare bottenkant */
-    
-    height: 26px; /* Justera höjd för att passa taskbaren bättre */
-    padding: 2px 14px; /* Flytta texten mer åt höger */
-    
+    background: #c0c0c0; 
+    border-top: 2px solid #ffffff; 
+    border-left: 2px solid #ffffff; 
+    border-right: 2px solid #808080; 
+    border-bottom: 2px solid #808080;    
+    height: 26px; 
+    padding: 2px 14px;    
     font-family: "MS Sans Serif", sans-serif;
     font-size: 14px;
     text-align: right;
-    min-width: 75px;
-    
+    min-width: 75px;  
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
-    /* Inre skugga för att få den att sjunka in */
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
 }

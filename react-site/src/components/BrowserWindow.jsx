@@ -50,7 +50,7 @@ const BrowserWindow = ({ title, initialUrl, onClose }) => {
         height: size.height,
       }}
     >
-      {/* Title Bar */}
+      {/* Title_bar */}
       <div className="window-titlebar">
         <span className="window-title">{title}</span>
         <div className="window-controls">
@@ -60,7 +60,7 @@ const BrowserWindow = ({ title, initialUrl, onClose }) => {
         </div>
       </div>
 
-      {/* Address Bar */}
+      {/* Address_bar */}
       <div className="browser-address-bar">
         <input
           type="text"
@@ -73,7 +73,7 @@ const BrowserWindow = ({ title, initialUrl, onClose }) => {
         <button onClick={() => setUrl(inputUrl)}>Go</button>
       </div>
 
-      {/* Browser Content */}
+      {/* Browser_content */}
       <div className="window-content">
         <iframe key={url} src={url} title={title}></iframe>
       </div>

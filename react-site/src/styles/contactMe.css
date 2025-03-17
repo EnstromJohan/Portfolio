@@ -1,0 +1,50 @@
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form label {
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 4px;
+    border: 2px inset #d3d3d3;
+    background: white;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+.contact-form button {
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #c0c0c0;
+    border: 2px outset white;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+.status-message {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.status-message.success {
+    color: green;
+}
+
+.status-message.error {
+    color: red;
+}

@@ -32,7 +32,7 @@ const Window = ({ title, onClose, children }) => {
     }, [dragging, startPosition]);
 
     const handleMouseDown = (e) => {
-        e.preventDefault(); // Prevent text selection while dragging
+        e.preventDefault(); 
         setDragging(true);
         setStartPosition({ x: e.clientX - position.x, y: e.clientY - position.y });
     };
