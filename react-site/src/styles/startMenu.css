@@ -1,0 +1,84 @@
+.start-menu {
+    position: absolute;
+    bottom: 38px;
+    left: 10px;
+    width: 240px;
+    background: #c0c0c0;
+    border: 2px solid black;
+    box-shadow: inset 2px 2px white, inset -2px -2px gray;
+    padding: 5px;
+    font-family: "MS Sans Serif", sans-serif;
+    z-index: 100;
+}
+
+.start-menu-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px solid black;
+}
+
+.start-menu-section {
+    margin-top: 8px;
+    background: #dfdfdf;
+    padding: 5px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.start-menu-section h4 {
+    margin: 5px 0;
+    font-size: 12px;
+    color: black;
+}
+
+.start-menu-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.start-menu-section li {
+    display: flex;
+    align-items: center;
+    background: #c0c0c0;
+    padding: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.start-menu-section li:hover {
+    background: lightgray;
+}
+
+.shutdown-button {
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    background: #800000;
+    color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.shutdown-button:hover {
+    background: #600000;
+}
+
+.start-menu-shadow {
+    position: absolute;
+    bottom: 36px;
+    left: 12px;
+    width: 240px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}

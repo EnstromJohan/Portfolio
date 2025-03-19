@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ExplorerWindow from "./ExplorerWindow";
 import ProjectWindow from "./ProjectWindow";
 import "../styles/projects.css";
-import projectIcon from "../assets/icons/project.png"; 
+import projectIcon from "../../public/icons/project.png"; 
 import projectsData from "../data/projectsData"; 
 
 const Projects = ({ onClose }) => {
@@ -10,7 +10,6 @@ const Projects = ({ onClose }) => {
 
     return (
         <>
-            {/* Projects Folder Window */}
             <ExplorerWindow title="Projects" onClose={onClose}>
                 <div className="projects-content">
                     {projectsData.map((project) => (
@@ -22,7 +21,6 @@ const Projects = ({ onClose }) => {
                 </div>
             </ExplorerWindow>
 
-            {/* Open Project Window */}
             {openProject && (
                 <ProjectWindow 
                     project={openProject} 
