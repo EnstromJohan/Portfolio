@@ -3,12 +3,12 @@
   "name": "Johan Enström – Portfolio",
   "icons": [
     {
-      "src": "logo_bl.png",
+      "src": "logo_bl_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo_bl.png",
+      "src": "logo_bl_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
