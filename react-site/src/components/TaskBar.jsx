@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Clock from "./Clock";
 import StartMenu from "./StartMenu";
+import githubIcon from "../assets/icons/icongithub.svg";
 
 const TaskBar = ({ recentFiles, onOpenFile, onShutdown }) => {
     const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
@@ -20,7 +21,13 @@ const TaskBar = ({ recentFiles, onOpenFile, onShutdown }) => {
                 />
             )}
 
-            <div className="taskbar-windows"></div>
+            <div className="taskbar-windows">
+                <div className="taskbar-socials">
+                    <a href="https://github.com/EnstromJohan" target="_blank" rel="noopener noreferrer">
+                        <img src={githubIcon} alt="GitHub" />
+                    </a>
+                </div>
+            </div>
             <Clock />
         </div>
     );
