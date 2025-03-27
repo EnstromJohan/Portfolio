@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ExplorerWindow from "./ExplorerWindow";
 import ProjectWindow from "./ProjectWindow";
 import "../styles/projects.css";
-import projectIcon from "../../public/icons/project.png"; 
+import projectIcon from "../assets/icons/project.png"; 
 import projectsData from "../data/projectsData"; 
 
 const Projects = ({ onClose }) => {

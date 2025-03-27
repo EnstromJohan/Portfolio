@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ExplorerWindow from "./ExplorerWindow";
 import BrowserWindow from "./BrowserWindow";
-import pdfIcon from "../../public/icons/document.png";
-import cvFile from "../../public/pdf/CvEng.pdf"; 
+import pdfIcon from "../assets/icons/document.png";
+import cvFile from "../assets/CvJEng.pdf"; 
 import "../styles/aboutMe.css"; 
 
 const AboutMe = ({ onClose }) => {
