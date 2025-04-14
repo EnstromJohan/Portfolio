@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from '../assets/picOne.jpg';
 import Photo from '../assets/pic1.jpg';
-import CV from "../assets/CvEng.pdf";
+import CV from "../assets/CvJEng.pdf";
 import {
     LinkedInIcon,
     GitHubLogo,
